@@ -13,10 +13,12 @@ Plug 'vim-airline/vim-airline'
 Plug 'stevearc/dressing.nvim'
 Plug 'TimUntersberger/neogit'
 Plug 'nvim-lua/plenary.nvim'
+Plug 'lewis6991/gitsigns.nvim'
 call plug#end()
 
 :lua require("mason").setup()
 :lua require("neogit").setup {} 
+:lua require("gitsigns").setup()
 :luafile C:\Users\User\AppData\Local\nvim\nvim-tree-config.lua
 
 set nocompatible            " disable compatibility to old-time vi
@@ -60,7 +62,8 @@ nnoremap <silent> <leader>p :split <bar> resize 20 <bar> terminal <CR>
 nnoremap <silent> <leader>q <c-W><c-R><CR> 
 " change window focus
 nnoremap <silent> <leader>w <c-W><c-W><CR>
-
+" Neogit window
+nnoremap <silent> <leader>g :Neogit<CR>
 " coc config
 
 " Some servers have issues with backup files, see #649
