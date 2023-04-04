@@ -10,9 +10,13 @@ Plug 'Shougo/deoplete.nvim'
 Plug 'lighttiger2505/deoplete-vim-lsp'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'vim-airline/vim-airline'
+Plug 'stevearc/dressing.nvim'
+Plug 'TimUntersberger/neogit'
+Plug 'nvim-lua/plenary.nvim'
 call plug#end()
 
 :lua require("mason").setup()
+:lua require("neogit").setup {} 
 :luafile C:\Users\User\AppData\Local\nvim\nvim-tree-config.lua
 
 set nocompatible            " disable compatibility to old-time vi
@@ -48,7 +52,15 @@ set ttyfast                 " Speed up scrolling in Vim
 let mapleader=";"
 inoremap ;; <Esc>
 nnoremap <silent> <leader>tb :TagbarToggle<CR>
-nnoremap <silent> <Space> :NvimTreeToggle<CR>
+nnoremap <silent> <leader><Space> :NvimTreeToggle<CR>
+
+" show terminal
+nnoremap <silent> <leader>p :split <bar> resize 20 <bar> terminal <CR>
+" rotate windows
+nnoremap <silent> <leader>q <c-W><c-R><CR> 
+" change window focus
+nnoremap <silent> <leader>w <c-W><c-W><CR>
+
 " coc config
 
 " Some servers have issues with backup files, see #649
@@ -56,7 +68,7 @@ set nobackup
 set nowritebackup
 
 " Having longer updatetime (default is 4000 ms = 4s) leads to noticeable
-" delays and poor user experience
+"Rotate delays and poor user experience
 set updatetime=300
 
 " Always show the signcolumn, otherwise it would shift the text each time
