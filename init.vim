@@ -14,6 +14,7 @@ Plug 'stevearc/dressing.nvim'
 Plug 'TimUntersberger/neogit'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'lewis6991/gitsigns.nvim'
+Plug 'tomasiser/vim-code-dark'
 call plug#end()
 
 :lua require("mason").setup()
@@ -44,7 +45,7 @@ set ttyfast                 " Speed up scrolling in Vim
 " set spell                 " enable spell check (may need to download language package)
 " set noswapfile            " disable creating swap file
 " set backupdir=~/.cache/vim " Directory to store backup files.
-
+colorscheme codedark
 " terminal config
 
 :tnoremap <Esc> <C-\><C-n>
